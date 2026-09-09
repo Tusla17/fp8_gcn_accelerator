@@ -1,0 +1,75 @@
+# Python & PyTorch Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Large generated full-dataset testvector dumps (reproducible with python export_testvectors.py)
+# Keep only subgraph-32 verification vectors in repo
+software/testvectors/cora/
+software/testvectors/citeseer/
+software/testvectors/pubmed/
+
+# Jupyter & IDE
+.ipynb_checkpoints
+.vscode/
+.idea/
+*.swp
+*~
+
+# Vivado / EDA Temporary Files & Logs
+*.log
+*.jou
+*.str
+*.dcp
+*.rpt
+*.wdb
+*.vcd
+.Xil/
+hd_visual/
+*.sim/
+*.ip_user_files/
+*.hw/
+*.runs/
+*.cache/
+dfx_runtime.txt
+vivado_*.backup.*
+vivado_pid*.str
+xsim.dir/
+xsim.log
+xsim.jou
+xelab.log
+xelab.pb
+xvlog.log
+xvlog.pb
+
+# Compiled Simulation Binaries
+sim_top
+sim_mult
+*.o
+*.out
+
+# Windows OS thumbnails
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
