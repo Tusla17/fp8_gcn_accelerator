@@ -24,7 +24,7 @@ module ping_pong_buffer #(
     // Read Port (Feeding into PE Groups)
     input  wire                  rd_en,
     input  wire [ADDR_WIDTH-1:0] rd_addr,
-    output reg  [DATA_WIDTH-1:0] rd_data
+    output wire [DATA_WIDTH-1:0] rd_data
 );
 
     reg active_bank; // 0: Bank0 write / Bank1 read, 1: Bank1 write / Bank0 read

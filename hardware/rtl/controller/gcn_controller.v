@@ -60,13 +60,13 @@ module gcn_controller #(
             end
             STATE_GEMM_LAYER1: begin
                 // In full hardware, monitored via buffer/row done signals
-                if (step_counter >= num_nodes) next_state = STATE_SPMM_LAYER1;
+                if (step_counter >= num_nodes && num_features != 16'd0) next_state = STATE_SPMM_LAYER1;
             end
             STATE_SPMM_LAYER1: begin
                 if (step_counter >= num_nodes) next_state = STATE_GEMM_LAYER2;
             end
             STATE_GEMM_LAYER2: begin
-                if (step_counter >= num_nodes) next_state = STATE_SPMM_LAYER2;
+                if (step_counter >= num_nodes && num_classes != 16'd0) next_state = STATE_SPMM_LAYER2;
             end
             STATE_SPMM_LAYER2: begin
                 if (step_counter >= num_nodes) next_state = STATE_DONE;
