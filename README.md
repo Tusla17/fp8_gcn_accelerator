@@ -328,7 +328,23 @@ Reports are automatically written to `hardware/syn/output/`:
 | **NVIDIA Xavier NX GPU** | 1.1 GHz | - | 14.98 W | 1.85 ms | $1.01\times$ | $4.37 \times 10^{4}$ | $8.0\times$ |
 | **GCNAX (40nm ASIC)** | 1.0 GHz | - | 4.48 W | 0.20 ms | $9.35\times$ | $1.45 \times 10^{6}$ | $265\times$ |
 | **LW-GCN (FPGA DSP)** | 200 MHz | 512 (61%) | 8.16 W | 41.2 $\mu s$ | $45.4\times$ | $3.85 \times 10^{6}$ | $704\times$ |
-| **FP8GCN (This Work)** | **200 MHz** | **0 (0% DSP)** | **5.44 W** | **61.0 $\mu s$** | **$30.7\times$** | **$3.89 \times 10^{6}$** | **$712\times$** |
+| **FP8GCN (This Work)** | **200 MHz** | **0 (0% DSP)** | **1.031 W** | **61.0 $\mu s$** | **$30.7\times$** | **$1.59 \times 10^{7}$** | **$2912\times$** |
+
+### 4. Vivado Post-Implementation Metrics (ZCU106 - `xczu7ev-ffvc1156-2-e`)
+
+* **Execution Status:** Synthesis, Implementation & Bitstream Generation PASSED (100% Routed, 0 DRC violations)
+* **DSP Blocks:** **0 DSP Slices (0%)** — Proves 100% DSP-Free logic implementation via FP8 L-Mul
+* **Clock Timing:** Target $200.00\text{ MHz}$ ($T = 5.000\text{ ns}$), $WNS = \mathbf{+0.766\text{ ns}}$, $WHS = \mathbf{+0.012\text{ ns}}$
+* **Maximum Clock Frequency ($F_{\max}$):** $\mathbf{236.18\text{ MHz}}$ (exceeds specification target by 18%)
+* **Resource Utilization:**
+  * **CLB LUTs:** $20,244$ / $230,400$ ($8.78\%$)
+  * **CLB Flip-Flops:** $8,926$ / $460,800$ ($1.93\%$)
+  * **Block RAM (BRAM):** $122$ blocks
+  * **UltraRAM (URAM):** $0$ blocks
+* **Power Dissipation:**
+  * **Total On-Chip Power:** $\mathbf{1.031\text{ W}}$ (Junction Temperature: $26.0^\circ\text{C}$, Thermal Margin: $74.0^\circ\text{C}$)
+  * **Dynamic Power:** $0.436\text{ W}$ ($42\%$)
+  * **Device Static Power:** $0.595\text{ W}$ ($58\%$)
 
 <p align="center">
   <img src="docs/pareto_frontier.png" alt="Pareto Frontier" width="48%">
